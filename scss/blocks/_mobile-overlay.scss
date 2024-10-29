@@ -1,0 +1,9 @@
+.mobile-overlay {
+   
+      &__list {
+            @include flex-center();
+            flex-direction: column;
+            row-gap: 30px;
+           
+      }
+}

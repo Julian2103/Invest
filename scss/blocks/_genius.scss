@@ -1,0 +1,117 @@
+.genius {
+   display: flex;
+   padding-top: 85px;
+   @include desktop {
+      flex-direction: column;
+      background-color: #232526;
+      margin-inline: -20px;
+      padding-top: 90px;
+   }
+   &__list {
+      display: grid;
+      width: max-content;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 30px;
+      @include mobile {
+         gap: 50px 20px;
+         grid-template-columns: 150px 150px;
+         margin-inline: auto;
+      }
+   }
+   &__item {
+      &:nth-child(even) {
+         margin-top: -85px;
+      }
+      @include mobile {
+         &:nth-child(even) {
+            margin-top: 0;
+         }
+         &:nth-child(odd) {
+            margin-top: -30px;
+         }
+      }
+      width: max-content;
+   }
+   &__body {
+      padding-right: 64px;
+      flex-shrink: 0;
+      border-right: 1px solid;
+      border-image: linear-gradient(
+         to bottom,
+         rgba(128, 147, 255, 0) 0%,
+         rgba(125, 155, 250, 1) 21%,
+         rgba(96, 219, 212, 1) 79%,
+         rgba(92, 228, 207, 0) 100%
+      );
+      border-image-slice: 1;
+      @include desktop {
+         border-right: 0px solid;
+         padding-right: 0px;
+      }
+   }
+   &__card {
+      @include flex-center;
+      flex-direction: column;
+      row-gap: 30px;
+      &-img {
+         @include mobile {
+            width: 150px;
+            height: auto;
+         }
+      }
+      &-title {
+         font-weight: 600;
+         @include fluid-text(26, 20);
+         color: var(--color-grey);
+         text-transform: capitalize;
+      }
+      &-post {
+         text-transform: capitalize;
+      }
+      &-info {
+         @include flex-center;
+         flex-direction: column;
+      }
+   }
+   &__main {
+      position: relative;
+      height: max-content;
+      max-width: 606px;
+      margin-inline: 64px -164px;
+      padding: 173px 164px 121px 69px;
+      background-color: #232526;
+      @include mobile {
+         padding: 60px 33px;
+         margin: 0px;
+      }
+   }
+   &__svg {
+      position: absolute;
+      top: -78px;
+      left: 0px;
+      @include mobile {
+         display: none;
+      }
+   }
+   &__title {
+      text-transform: capitalize;
+      &:not(:last-child) {
+         margin-bottom: 40px;
+      }
+   }
+   &__subtitle {
+      max-width: 360px;
+      &:not(:last-child) {
+         margin-bottom: 30px;
+      }
+   }
+   &__link {
+      span {
+         color: var(--color-gradient-purple);
+         margin-right: 10px;
+         @include mobile {
+            margin-right: 45px;
+         }
+      }
+   }
+}

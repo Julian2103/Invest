@@ -1,0 +1,130 @@
+.ideas {
+   margin-bottom: 90px;
+   &__svg {
+      position: absolute;
+      top: 20%;
+      right: 105%;
+   }
+   &__wrapper {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      @include desktop {
+         flex-direction: column;
+         align-items: center;
+      }
+   }
+   &__inner {
+      display: flex;
+      justify-content: space-between;
+      @include desktop {
+         flex-direction: column;
+         align-items: center;
+         font-size: 12px;
+         row-gap: 20px;
+      }
+   }
+   &__header {
+      &-title {
+         background: linear-gradient(
+            to right,
+            var(--color-gradient-purple) 0%,
+            var(--color-gradient-green) 100%
+         );
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         margin-bottom: 40px;
+         max-width: 565px;
+         @include desktop {
+            margin-bottom: 20px;
+         }
+      }
+      &-description {
+         margin-bottom: 188px;
+         max-width: 518px;
+         @include desktop {
+            margin-bottom: 60px;
+         }
+      }
+      &-list {
+         display: flex;
+         column-gap: 30px;
+         max-width: 484px;
+         letter-spacing: 4px;
+         @include desktop {
+            column-gap: 20px;
+            letter-spacing: 0px;
+         }
+      }
+      &-item:first-child {
+         color: var(--color-gradient-purple);
+      }
+   }
+   &__regestration {
+      &-wrapper {
+         display: flex;
+         flex-direction: column;
+         row-gap: 60px;
+         margin-bottom: 80px;
+         padding-top: 36px;
+         @include desktop {
+            padding-top: 0px;
+         }
+      }
+      &-list {
+         display: flex;
+         flex-direction: column;
+         row-gap: 40px;
+      }
+      &-list input {
+         padding-left: 8%;
+         background-color: transparent;
+         font-size: 22px;
+         color: var(--color-grey);
+         height: 48px;
+         width: 466px;
+         border: none;
+         border-bottom: 1px solid var(--color-grey);
+         @include desktop {
+            width: 320px;
+            text-transform: uppercase;
+            font-size: 14px;
+         }
+      }
+      &-item {
+         position: relative;
+      }
+      &-item::after {
+         position: absolute;
+         content: "";
+         top: 100%;
+         left: 8%;
+         height: 9%;
+         width: 20%;
+         translate: 0% -50%;
+         background: linear-gradient(
+            to right,
+            var(--color-gradient-purple) 0%,
+            var(--color-gradient-green) 100%
+         );
+      }
+      &-link {
+         display: flex;
+         max-width: max-content;
+         align-items: center;
+         column-gap: 22px;
+         color: var(--color-gradient-purple);
+      }
+      &-confidantial {
+         &-list {
+            display: flex;
+            column-gap: 30px;
+            max-width: 484px;
+            letter-spacing: 4px;
+            @include desktop {
+               letter-spacing: 0px;
+            }
+         }
+      }
+   }
+}

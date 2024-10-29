@@ -1,0 +1,60 @@
+body {
+   font-family: var(--font-second);
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 1.5;
+   color: var(--color-grey);
+   background-color: var(--color-background);
+}
+button {
+   cursor: pointer;
+   @include reset-button;
+}
+a {
+   @include reset-link;
+   text-transform: uppercase;
+   font-family: var(--font-base);
+   font-weight: 400;
+}
+a,
+button,
+input,
+textarea,
+svg * {
+   transition-duration: var(--transition-duration);
+}
+h1 {
+   font-family: var(--font-base);
+   font-weight: 700;
+   @include fluid-text(82, 42);
+}
+h2,
+h3 {
+   font-family: var(--font-base);
+   font-weight: 400;
+}
+h2 {
+   @include fluid-text(62, 36);
+}
+h3 {
+   @include fluid-text(44, 26);
+}
+h4 {
+   font-weight: var(--font-base);
+   font-weight: 600;
+   font-size: 26px;
+   text-transform: capitalize;
+}
+h1,
+h2,
+h3,
+h4 {
+   line-height: 1.2;
+   color: var(--color-light);
+   text-transform: capitalize;
+}
+h5 {
+   font-family: "GinoraSans";
+   font-weight: 400;
+   font-size: 22px;
+}

@@ -1,0 +1,8 @@
+.section{
+        $sectionMarginBottom: 200px;
+        margin-bottom: $sectionMarginBottom;
+        @include mobile{
+               $sectionMarginBottom:100px;
+               margin-bottom: $sectionMarginBottom;
+        }
+}

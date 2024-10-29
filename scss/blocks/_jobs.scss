@@ -1,0 +1,159 @@
+.jobs {
+   @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   &__header {
+      &-title {
+         @include fluid-text(62, 42);
+      }
+      padding-top: 30px;
+      border-top: 1px solid;
+      border-image: linear-gradient(
+            90deg,
+            rgba(128, 147, 255, 0) 0%,
+            rgba(125, 155, 250, 1) 21%,
+            rgba(96, 219, 212, 1) 79%,
+            rgba(92, 228, 207, 0) 100%
+         )
+         1 0 0 0;
+      margin-bottom: 140px;
+      @include desktop {
+         max-width: max-content;
+         margin-bottom: 60px;
+         border-top: none;
+         padding-top: 0px;
+      }
+   }
+   &__main {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      @include desktop {
+         max-width: max-content;
+         flex-direction: column;
+         flex-direction: column-reverse;
+      }
+   }
+   &__company {
+      max-width: max-content;
+      &-name {
+         &:not(:last-child) {
+            margin-bottom: 5px;
+         }
+         letter-spacing: 5px;
+      }
+      &-title {
+         &:not(:last-child) {
+            margin-bottom: 20px;
+         }
+         max-width: 499px;
+         width: 100%;
+         line-height: 1.15;
+         max-height: 100px;
+         
+      }
+      &-subtitle {
+         font-family: "Gilroy-Medium";
+         font-weight: 500;
+         text-transform: capitalize;
+      }
+      &-list {
+         margin-bottom: 80px;
+         flex-shrink: 0;
+         width: max-content;
+         width: 100%;
+         @include desktop {
+            margin-bottom: 60px;
+         }
+      }
+      &-item {
+         width: 763px;
+         &:not(:first-child) {
+            padding-top: 40px;
+         }
+         &:nth-child(2n) {
+            .jobs__company-title {
+               background: linear-gradient(
+                  to right,
+                  var(--color-gradient-purple) 0%,
+                  var(--color-gradient-green) 100%
+               );
+               -webkit-background-clip: text;
+               -webkit-text-fill-color: transparent;
+            }
+         }
+         padding-bottom: 40px;
+         border-bottom: 1px solid;
+
+         border-image: linear-gradient(
+               90deg,
+               var(--color-gradient-purple) 0%,
+               var(--color-gradient-green) 100%
+            )
+            0 0 1 0;
+         @include desktop {
+            max-width: 320px;
+            width: 100%;
+         }
+      }
+      &-wrapper {
+         @include flex-center;
+         column-gap: 96px;
+         justify-content: space-between;
+         @include desktop {
+            justify-content: start;
+            column-gap: 19px;
+         }
+      }
+      &-next {
+         span {
+            color: var(--color-gradient-purple);
+            margin-right: 10px;
+         }
+      }
+   }
+   &__category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 34px;
+      @include desktop {
+         margin-bottom: 60px;
+      }
+      &-title {
+         width: max-content;
+         &:not(:last-child) {
+            margin-bottom: 30px;
+         }
+      }
+      &-list {
+         display: flex;
+         flex-direction: column;
+         row-gap: 20px;
+         width: max-content;
+      }
+      &-item {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         column-gap: 15px;
+         &:nth-child(4n) {
+            color: var(--color-gradient-purple);
+         }
+         @include desktop {
+            width: 100%;
+         }
+      }
+   }
+   &__svg-bg {
+      position: absolute;
+      top: 336px;
+      right: -170px;
+      rotate: 3deg;
+      @include desktop {
+         display: none;
+      }
+   }
+}

@@ -1,0 +1,74 @@
+.portfolio {
+   padding-top: 30px;
+   border-top: 1px solid;
+   border-image: linear-gradient(
+         90deg,
+         rgba(128, 147, 255, 0) 0%,
+         rgba(125, 155, 250, 1) 21%,
+         rgba(96, 219, 212, 1) 79%,
+         rgba(92, 228, 207, 0) 100%
+      )
+      1 0 0 0;
+   &__title {
+      text-transform: capitalize;
+      margin-bottom: 50px;
+   }
+   &__list {
+      --gridColumns:4;
+      display: grid;
+      grid-template-columns: repeat(var(--gridColumns), 1fr);
+      width: max-content;
+      margin-left: 64px;
+      column-gap: 120px;
+      @include desktop{
+         --gridColumns:3;
+         margin-inline: auto;
+      }
+      @include mobile{
+         --gridColumns:2;
+         column-gap:39px;
+      }
+   }
+   &__item {
+      width: max-content;
+   }
+   &__link {
+      display: flex;
+      color: var(--color-grey);
+      padding-block: 40px;
+      width: max-content;
+      align-items: center;
+      @include hover {
+         background-color: #212223;
+         .portfolio__link-company {
+            background: linear-gradient(
+               135deg,
+               var(--color-gradient-purple) 0%,
+               var(--color-gradient-green) 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+         .portfolio__link-svg {
+            background: linear-gradient(
+               135deg,
+               var(--color-gradient-purple) 0%,
+               var(--color-gradient-green) 100%
+            );
+         }
+      }
+      &-svg {
+         width: max-content;
+         height: 30px;
+         margin-right: 10px;
+         background-color: currentColor;
+      }
+      &-company {
+         font-weight: 300;
+         @include fluid-text(36, 26);
+         line-height: 1;
+         color: inherit;
+      }
+   }
+}

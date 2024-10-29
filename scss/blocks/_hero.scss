@@ -1,0 +1,110 @@
+.hero {
+     
+     &__banner {
+          display: flex;
+          min-height: 963px;
+          align-items: center;
+          justify-content: center;
+          background: url(../../icon/hero/banner/hero-svg.svg) no-repeat center /
+               contain;
+          margin-bottom: 90px;
+          @include mobile {
+               background: none;
+               align-items: start;
+               padding-inline: 20px;
+               position: relative;
+               min-height: 0;
+               margin-bottom: 0;
+          }
+          &-title {
+               max-width: 838px;
+               text-align: center;
+               padding-inline: 20px;
+               @include mobile {
+                    margin-bottom: 188px;
+                    text-align: left;
+               }
+               &-bg {
+                    position: absolute;
+                    top: 310px;
+                    right: 10px;
+               }
+               span {
+                    background: linear-gradient(
+                         to right,
+                         var(--color-gradient-purple),
+                         var(--color-gradient-green)
+                    ); /* Замените цвета на нужные вам */
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: transparent;
+               }
+               @include mobile {
+                    margin-top: calc(85px + 100px);
+               }
+          }
+     }
+     &__motivation {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          min-height: 695px;
+          &-bg-svg{
+               position: absolute;
+               top:176px;
+               right:-20%;
+               max-width: 156px;
+               
+               @include desktop{
+                    display: none;
+               }
+          }
+          @include mobile {
+               min-height: 0;
+          }
+          &-img {
+               align-self: end;
+               max-width: 992px;
+               width: 100%;
+               height: auto;
+               @include desktop {
+                    margin-bottom: 40px;
+               }
+          }
+          &-info {
+               position: absolute;
+               top: 311px;
+               @include desktop {
+                    position: static;
+                    max-width: 320px;
+               }
+          }
+          &-title {
+               text-transform: capitalize;
+               &:not(:last-child) {
+                    margin-bottom: 60px;
+               }
+               @include mobile {
+                    &:not(:last-child) {
+                         margin-bottom: 30px;
+                    }
+               }
+          }
+          &-description {
+               max-width: 471px;
+               &:not(:last-child) {
+                    margin-bottom: 60px;
+               }
+               @include mobile {
+                    &:not(:last-child) {
+                         margin-bottom: 30px;
+                    }
+               }
+          }
+          &-link {
+               display: flex;
+               column-gap: 10px;
+               color: var(--color-gradient-purple);
+          }
+     }
+}

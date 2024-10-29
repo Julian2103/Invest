@@ -1,0 +1,31 @@
+.footer {
+   display: flex;
+   justify-content: center;
+   font: var(--font-base);
+   font-weight: 400;
+   font-size: 16px;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   a {
+      color: var(--color-gradient-purple);
+      @include desktop {
+         text-decoration: underline;
+      }
+   }
+   border-top: 1px solid;
+   border-image: linear-gradient(
+         90deg,
+         rgba(128, 147, 255, 0) 0%,
+         rgb(125, 155, 250) 21%,
+         rgb(96, 219, 212) 79%,
+         rgba(92, 228, 207, 0) 100%
+      )
+      1 0 0 0;
+   padding-block: 60px 40px;
+   @include desktop {
+      text-transform: capitalize;
+      letter-spacing: 0px;
+      color: var(--color-light);
+      padding-block: 30px;
+   }
+}

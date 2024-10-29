@@ -1,0 +1,101 @@
+.invest {
+   &__header {
+      @include flex-center;
+      margin-bottom: 90px;
+      @include desktop {
+         flex-direction: column;
+         row-gap: 20px;
+         margin-bottom: 60px;
+      }
+      &-title {
+         max-width: 664px;
+         flex-shrink: 0;
+         text-transform: capitalize;
+      }
+   }
+   &__body {
+      position: relative;
+      &-svg{
+         position: absolute;
+         left:-128px;
+         bottom:296px;
+      }
+      &-list {
+         display: flex;
+         flex-direction: column;
+         row-gap: 60px;
+         @include desktop {
+            row-gap: 80px;
+         }
+      }
+      &-item {
+         @include flex-center;
+         column-gap: 83px;
+         &:nth-child(2n) {
+            flex-direction: row-reverse;
+         }
+         @include desktop {
+            flex-direction: column;
+            &:nth-child(2n) {
+               flex-direction: column;
+            }
+         }
+      }
+      &-info {
+         &-company {
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 12px;
+            font-family: var(--font-base);
+            &:not(:last-child) {
+               margin-bottom: 6px;
+            }
+            @include desktop {
+               &:not(:last-child) {
+                  margin-bottom: 10px;
+               }
+            }
+         }
+         &-title {
+            &:not(:last-child) {
+               margin-bottom: 20px;
+            }
+         }
+         &-description {
+            &:not(:last-child) {
+               margin-bottom: 20px;
+            }
+            @include desktop {
+               &:not(:last-child) {
+                  margin-bottom: 40px;
+               }
+            }
+         }
+         &-link {
+            color: var(--color-gradient-purple);
+            svg *[fill] {
+               fill: var(--color-gradient-green);
+            }
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            width: max-content;
+            &--green {
+               color: var(--color-gradient-green);
+               svg *[fill] {
+                  fill: var(--color-gradient-purple);
+               }
+            }
+         }
+      }
+      &-img {
+         max-width: 566;
+         height: auto;
+         @include mobile {
+            max-width: 320px;
+            max-height: 250px;
+            margin-bottom: 20px;
+         }
+      }
+   }
+}
